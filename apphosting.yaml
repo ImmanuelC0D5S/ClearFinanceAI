@@ -1,0 +1,22 @@
+# apphosting.yaml
+runtimeConfig:
+  cloudRun:
+    cpu: 1
+    memoryMiB: 512
+    # Increase timeout to 60s so scraping doesn't get cut off
+    timeoutSeconds: 60
+
+# This maps your environment variables to the secrets you set in the CLI
+env:
+  - variable: GOOGLE_API_KEY
+    secret: GOOGLE_API_KEY
+  - variable: TAVILY_API_KEY
+    secret: TAVILY_API_KEY
+  - variable: FIREBASE_PRIVATE_KEY
+    secret: FIREBASE_PRIVATE_KEY
+  
+  # Standard variables (Replace these with your actual values)
+  - variable: FIREBASE_PROJECT_ID
+    value: "studio-2429778013-b1317"
+  - variable: FIREBASE_CLIENT_EMAIL
+    value: "firebase-adminsdk-xxxxx@studio-2429778013-b1317.iam.gserviceaccount.com"
